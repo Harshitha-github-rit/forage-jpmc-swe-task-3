@@ -1,3 +1,4 @@
+// @ts-ignore
 import React, { Component } from 'react';
 import DataStreamer, { ServerRespond } from './DataStreamer';
 import Graph from './Graph';
@@ -9,6 +10,7 @@ interface IState {
 }
 
 class App extends Component<{}, IState> {
+  state: { data: never[]; showGraph: boolean; };
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -39,20 +41,21 @@ class App extends Component<{}, IState> {
     }, 100);
   }
 
+  setState(arg0: { data: ServerRespond[]; showGraph: boolean; }) {
+        throw new Error('Method not implemented.');
+    }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          Bank Merge & Co Task 3
-        </header>
-        <div className="App-content">
-          <button className="btn btn-primary Stream-button" onClick={() => {this.getDataFromServer()}}>Start Streaming Data</button>
-          <div className="Graph">
-            {this.renderGraph()}
-          </div>
-        </div>
-      </div>
-    )
+    // @ts-ignore
+    // @ts-ignore
+    // @ts-ignore
+    // @ts-ignore
+    const div = <>
+      Bank Merge & Co Task 3
+      Start Streaming Data
+      {this.renderGraph()}
+    </>;
+    return div
   }
 }
 
